@@ -1,2 +1,3 @@
-<h1>Ön İzleme Sayfaları</h1>
-<p><a href="https://akocerweb.github.io/Internet-1/01.htm" target="_blank">01.htm</a></p>
+<h1>Internet Programcılığı I Dersi Uygulamaları</h1>
+<p>Her Hafta Güncerllenecektir.</p>
+<p><a href="https://akocercom" target="_blank">akocer.com</a></p>
