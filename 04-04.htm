@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+  <div class="container" style="margin-top:150px;">
+   
+
+      <div class="row">
+
+
+ <div class="col-md-4">
+ 
+<table class="table table-hover" id="tablo1">
+  <tr>
+    <td><b>KN</b></td>
+    <td><b>Adı</b></td>
+    <td><b>E-Posta</b></td>
+    <td><b>Yaş</b></td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Ali</td>
+    <td>ali@ali.com</td>
+    <td>20</td>
+  </tr>
+
+    <tr>
+        <td>2</td>
+        <td>Veli</td>
+        <td>ali@ali.com</td>
+        <td>20</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Selami</td>
+          <td>ali@ali.com</td>
+          <td>20</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Ayşe</td>
+            <td>ali@ali.com</td>
+            <td>20</td>
+          </tr>
+          <tr>
+              <td>5</td>
+              <td>Fatma</td>
+              <td>ali@ali.com</td>
+              <td>20</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Hayriye</td>
+                <td>ali@ali.com</td>
+                <td>20</td>
+              </tr>
+</table>
+
+</div>
+<div class="col-md-4">
+    
+   <table class="table table-hover" id="tablo2">
+     <tr>
+       <td><b>KN</b></td>
+       <td><b>Adı</b></td>
+       <td><b>E-Posta</b></td>
+       <td><b>Yaş</b></td>
+     </tr>
+     <tr>
+       <td>1</td>
+       <td>Ali</td>
+       <td>ali@ali.com</td>
+       <td>20</td>
+     </tr>
+   
+       <tr>
+           <td>2</td>
+           <td>Veli</td>
+           <td>ali@ali.com</td>
+           <td>20</td>
+         </tr>
+         <tr>
+             <td>3</td>
+             <td>Selami</td>
+             <td>ali@ali.com</td>
+             <td>20</td>
+           </tr>
+           <tr>
+               <td>4</td>
+               <td>Ayşe</td>
+               <td>ali@ali.com</td>
+               <td>20</td>
+             </tr>
+             <tr>
+                 <td>5</td>
+                 <td>Fatma</td>
+                 <td>ali@ali.com</td>
+                 <td>20</td>
+               </tr>
+               <tr>
+                   <td>6</td>
+                   <td>Hayriye</td>
+                   <td>ali@ali.com</td>
+                   <td>20</td>
+                 </tr>
+   </table>
+   
+   </div>
+   <div class="col-md-4">
+      
+     <table class="table table-hover" id="tablo3">
+       <tr>
+         <td><b>KN</b></td>
+         <td><b>Adı</b></td>
+         <td><b>E-Posta</b></td>
+         <td><b>Yaş</b></td>
+       </tr>
+       <tr>
+         <td>1</td>
+         <td>Ali</td>
+         <td>ali@ali.com</td>
+         <td>20</td>
+       </tr>
+     
+         <tr>
+             <td>2</td>
+             <td>Veli</td>
+             <td>ali@ali.com</td>
+             <td>20</td>
+           </tr>
+           <tr>
+               <td>3</td>
+               <td>Selami</td>
+               <td>ali@ali.com</td>
+               <td>20</td>
+             </tr>
+             <tr>
+                 <td>4</td>
+                 <td>Ayşe</td>
+                 <td>ali@ali.com</td>
+                 <td>20</td>
+               </tr>
+               <tr>
+                   <td>5</td>
+                   <td>Fatma</td>
+                   <td>ali@ali.com</td>
+                   <td>20</td>
+                 </tr>
+                 <tr>
+                     <td>6</td>
+                     <td>Hayriye</td>
+                     <td>ali@ali.com</td>
+                     <td>20</td>
+                   </tr>
+     </table>
+     
+     </div>
+    </div>
+  </div>
+
+  
+  <script src="js/jquery-3.2.1.js"></script> 
+<script>
+$(function(){
+  
+$("#tablo1 tr:first").addClass("bg-info");
+$("#tablo1 tr:last").addClass("bg-danger");
+$("#tablo1 tr:eq(3)").addClass("bg-warning");
+
+$("#tablo2 tr:odd").addClass("bg-info");
+$("#tablo2 tr:even").addClass("bg-success");
+
+
+$("#tablo3 tr:lt(3)").addClass("bg-info");
+$("#tablo3 tr:gt(3)").addClass("bg-success");
+});
+</script>
+</body>
+</html>
