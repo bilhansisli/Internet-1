@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+  <div class="container" style="margin-top:150px;">
+    <div class="row">
+      <div class="col-md-4">
+
+        <div id="yazi" class="alert alert-info"></div>
+
+        <hr>
+        <button id="btnBasla" class="btn btn-success">Başla</button>
+        <button id="btnDurdur" class="btn btn-danger">Durdur</button>
+        <button id="btnSifirla" class="btn btn-warning">Sıfırla</button>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery-3.2.1.js"></script>
+  <script>
+    $(function () {
+      var t = 0;
+      var timer;
+
+
+      $("#btnBasla").click(function () {
+        $.Baslat();
+        return false;
+      });
+      $("#btnDurdur").click(function () {
+        clearInterval(timer);
+
+      });
+      $("#btnSifirla").click(function () {
+        t = 0;
+        $.formatliYaz();
+      });
+
+
+      $.Baslat = function () {
+        timer = setInterval(function () {
+          t++;
+          $.formatliYaz();
+        }, 100);
+      };
+
+      $.formatliYaz = function () {
+        var sa = parseInt(t / 3600);
+        var kalan = t - (sa * 3600);
+        var dk = parseInt(kalan / 60);
+        var sn = kalan - (dk * 60);
+
+        if (sa < 10) { sa = "0" + sa };
+        if (dk < 10) { dk = "0" + dk };
+        if (sn < 10) { sn = "0" + sn };
+
+        $("#yazi").html(sa + ":" + dk + ":" + sn);
+      };
+
+      $.formatliYaz();
+    });
+  </script>
+</body>
+
+</html>

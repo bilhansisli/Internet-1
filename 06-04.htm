@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+  <div class="container" style="margin-top:150px;">
+    <div class="row">
+      <div class="col-md-4">
+        <button id="btnIleri" class="btn btn-primary">İleri</button>
+        <button id="btnGeri" class="btn btn-primary">Geri</button>
+        <div id="kutu" class="alert alert-info"></div>
+
+
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery-3.2.1.js"></script>
+  <script>
+    $(function () {
+      $("#kutu").css({
+        "width": "100px",
+        "height": "100px",
+        "position": "fixed",
+        "top": "100px;",
+        "left": "200px",
+        "opacity": "0.0"
+      });
+
+      $("#btnIleri").click(function () {
+        $("#kutu").animate({
+          "width": "300px",
+          "height": "300px",
+          "position": "fixed",
+          "top": "100px;",
+          "left": "500px",
+          "opacity": "1.0"
+        }, 1000).animate({
+          "border-radius": "150px"
+
+        }, 1000);
+
+      });
+      $("#btnGeri").click(function () {
+        $("#kutu").animate({
+          "width": "100px",
+          "height": "100px",
+          "position": "fixed",
+          "top": "100px;",
+          "left": "200px",
+          "opacity": "0.0"
+        }, 1000);
+
+      });
+    });
+  </script>
+</body>
+
+</html>
