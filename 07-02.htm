@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+  <div class="container" style="margin-top:150px;">
+    <div class="row">
+      <div class="col-md-8">
+        <table class="table table-hover">
+          <tr class="bg-info">
+            <td>
+              <input type="checkbox" class="form-control" id="cbTum">
+            </td>
+            <td>KN</td>
+            <td>Adı Soyadı</td>
+            <td>E-Posta</td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" class="form-control" id="cb1">
+            </td>
+            <td>1</td>
+            <td>Ali</td>
+            <td>ali@mail.con</td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" class="form-control" id="cb2">
+            </td>
+            <td>2</td>
+            <td>Veli</td>
+            <td>veli@mail.con</td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" class="form-control" id="cb3">
+            </td>
+            <td>3</td>
+            <td>Selami</td>
+            <td>selami@mail.con</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery-3.2.1.js"></script>
+  <script>
+    $(function () {
+      $("#cbTum").click(function () {
+        var sec = $(this).prop("checked");
+
+        for (var i = 0; i < $("input:checkbox").length; i++) {
+          var idsi = $("input:checkbox:eq(" + i + ")").attr("id");
+          if (idsi != "cbTum") {
+            document.getElementById(idsi).checked = sec;
+          }
+        }
+
+      });
+
+      $("input:checkbox").click(function () {
+        var secili = true;
+        for (var i = 0; i < $("input:checkbox").length; i++) {
+          var idsi = $("input:checkbox:eq(" + i + ")").attr("id");
+
+          if (idsi != "cbTum" && document.getElementById(idsi).checked == false) {
+            secili = false;
+          }
+        }
+
+        document.getElementById("cbTum").checked = secili;
+      });
+
+    });
+  </script>
+</body>
+
+</html>

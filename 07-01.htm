@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+  <div class="container" style="margin-top:50px;">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="btn-group" id="butonlar">
+          <button class="btn btn-primary">Ana Sayfa</button>
+          <button class="btn btn-primary">Hakkında</button>
+          <button class="btn btn-primary">Teknik</button>
+          <button class="btn btn-primary">iletişim</button>
+        </div>
+        <div id="sayfalar" style="margin-top:20px">
+          <p class="alert alert-info" style="height:400px;">
+            <b>Ana Sayfa</b>
+            <br> Ekle sekmesinde, galeriler belgenizin genel görünümünü düzenlemek için tasarlanan öğeleri eklerler. Bu galerileri,
+            tablolar, üstbilgiler, altbilgiler, kapak sayfaları ve diğer belge yapı taşlarını eklemek için kullanabilirsiniz.
+            Resimler, kartlar veya grafikler oluşturduğunuzda, aynı zamanda geçerli belge görünümünüzü de düzenlerler.
+            <br>elgedeki seçili metnin biçimlendirmesini, Giriş sekmesindeki Hızlı Stiller galerisinden seçilen metin görünümünü
+            seçerek kolayca değiştirebilirsiniz. Metni doğrudan Giriş sekmesindeki diğer denetimleri kullanarak da biçimlendirebilirsiniz.
+            Denetimlerin çoğu geçerli temadan görünüm kullanma ya da doğrudan belirlediğiniz biçimi kullanma seçeneği sunar.
+
+          </p>
+          <p class="alert alert-info" style="height:400px;">
+            <b>Hakkında</b>
+            <br> Ekle sekmesinde, galeriler belgenizin genel görünümünü düzenlemek için tasarlanan öğeleri eklerler. Bu galerileri,
+            tablolar, üstbilgiler, altbilgiler, kapak sayfaları ve diğer belge yapı taşlarını eklemek için kullanabilirsiniz.
+            Resimler, kartlar veya grafikler oluşturduğunuzda, aynı zamanda geçerli belge görünümünüzü de düzenlerler.
+            <br>elgedeki seçili metnin biçimlendirmesini, Giriş sekmesindeki Hızlı Stiller galerisinden seçilen metin görünümünü
+            seçerek kolayca değiştirebilirsiniz. Metni doğrudan Giriş sekmesindeki diğer denetimleri kullanarak da biçimlendirebilirsiniz.
+            Denetimlerin çoğu geçerli temadan görünüm kullanma ya da doğrudan belirlediğiniz biçimi kullanma seçeneği sunar.
+
+          </p>
+          <p class="alert alert-info" style="height:400px;">
+            <b>Teknik</b>
+            <br> Ekle sekmesinde, galeriler belgenizin genel görünümünü düzenlemek için tasarlanan öğeleri eklerler. Bu galerileri,
+            tablolar, üstbilgiler, altbilgiler, kapak sayfaları ve diğer belge yapı taşlarını eklemek için kullanabilirsiniz.
+            Resimler, kartlar veya grafikler oluşturduğunuzda, aynı zamanda geçerli belge görünümünüzü de düzenlerler.
+            <br>elgedeki seçili metnin biçimlendirmesini, Giriş sekmesindeki Hızlı Stiller galerisinden seçilen metin görünümünü
+            seçerek kolayca değiştirebilirsiniz. Metni doğrudan Giriş sekmesindeki diğer denetimleri kullanarak da biçimlendirebilirsiniz.
+            Denetimlerin çoğu geçerli temadan görünüm kullanma ya da doğrudan belirlediğiniz biçimi kullanma seçeneği sunar.
+
+          </p>
+          <p class="alert alert-info" style="height:400px;">
+            <b>İletişim</b>
+            <br> Ekle sekmesinde, galeriler belgenizin genel görünümünü düzenlemek için tasarlanan öğeleri eklerler. Bu galerileri,
+            tablolar, üstbilgiler, altbilgiler, kapak sayfaları ve diğer belge yapı taşlarını eklemek için kullanabilirsiniz.
+            Resimler, kartlar veya grafikler oluşturduğunuzda, aynı zamanda geçerli belge görünümünüzü de düzenlerler.
+            <br>elgedeki seçili metnin biçimlendirmesini, Giriş sekmesindeki Hızlı Stiller galerisinden seçilen metin görünümünü
+            seçerek kolayca değiştirebilirsiniz. Metni doğrudan Giriş sekmesindeki diğer denetimleri kullanarak da biçimlendirebilirsiniz.
+            Denetimlerin çoğu geçerli temadan görünüm kullanma ya da doğrudan belirlediğiniz biçimi kullanma seçeneği sunar.
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery-3.2.1.js"></script>
+  <script>
+    $(function () {
+
+      $("#butonlar button:first").removeClass();
+      $("#butonlar button:first").addClass("btn btn-danger");
+
+      $("#sayfalar p").hide();
+      $("#sayfalar p:first").show();
+
+
+      $("#butonlar button").click(function () {
+
+        var index = $(this).index();
+        $("#butonlar button").removeClass();
+        $("#butonlar button").addClass("btn btn-primary");
+        $("#butonlar button:eq(" + index + ")").addClass("btn btn-danger");
+
+        $("#sayfalar p").slideUp();
+        $("#sayfalar p:eq(" + index + ")").slideDown();
+      });
+    });
+  </script>
+</body>
+
+</html>

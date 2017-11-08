@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+  <div class="container" style="margin-top:50px;">
+    <div class="row">
+      <div class="col-md-4">
+        <label>Öğrenci No</label>
+        <input type="text" id="txtOgrno" class="form-control">
+        <label>Adı Soyadı</label>
+        <input type="text" id="txtAd" class="form-control">
+        <label>Yaş</label>
+        <input type="text" id="txtYas" class="form-control">
+        <br>
+        <button class="btn btn-success" id="btnKaydet">Kaydet</button>
+      </div>
+      <div class="col-md-8">
+        <div id="sonuc"></div>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery-3.2.1.js"></script>
+  <script>
+    $(function () {
+
+      var kayitlar = [];
+
+      $("#btnKaydet").click(function () {
+
+        var ogrno = $("#txtOgrno").val();
+        var ad = $("#txtAd").val();
+        var yas = $("#txtYas").val();
+
+
+        if (ogrno == "" || ad == "" || yas == "") {
+          alert("Tüm Alanları Doldurunuz!");
+          return false;
+        }
+
+        var veri = new Object();
+        veri["ogrno"] = ogrno;
+        veri["ad"] = ad;
+        veri["yas"] = yas;
+        kayitlar.push(veri);
+
+
+        console.log(JSON.stringify(kayitlar));
+        $.sonucYaz();
+      });
+
+      $.sonucYaz = function () {
+        var tb = "<table class='table'><tr class='bg-info'><td>Öğrenci No</td><td>Adı Soyadı</td><td>Yaş</td></tr>";
+        $.each(kayitlar, + function (i, kayit) {
+
+          tb += "<tr><td>" + kayit.ogrno + "</td><td>" + kayit.ad + "</td><td>" + kayit.yas + "</td></tr>";
+        });
+        tb += "</table>";
+
+        $("#sonuc").html(tb);
+      };
+    });
+  </script>
+</body>
+
+</html>
