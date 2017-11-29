@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+  <div class="container" style="margin-top:50px;">
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-primary" id="btnYeniKayit">
+          <span class="glyphicon glyphicon-plus-sign"></span> Yeni Kayıt</button>
+        <br>
+        <br>
+        <table class="table table-hover" id="tbKayitlar">
+          <tr>
+            <th>Adı</th>
+            <th>Soyadı</th>
+            <th>E-Posta</th>
+            <th>Yaş</th>
+            <th>Düzenle</th>
+            <th>Sil</th>
+          </tr>
+          <tr>
+            <td>Segban</td>
+            <td>Yağır</td>
+            <td>ipsum@outlook.com</td>
+            <td>26</td>
+            <td>
+              <button class="btn btn-warning duzenle">Düzenle</button>
+            </td>
+            <td>
+              <button class="btn btn-danger sil">Sil</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Urangu</td>
+            <td>Özel</td>
+            <td>et@yahoo.com</td>
+            <td>25</td>
+            <td>
+              <button class="btn btn-warning duzenle">Düzenle</button>
+            </td>
+            <td>
+              <button class="btn btn-danger sil">Sil</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Özsevi</td>
+            <td>Kantarcıoğlu</td>
+            <td>sed@yahoo.com</td>
+            <td>21</td>
+            <td>
+              <button class="btn btn-warning duzenle">Düzenle</button>
+            </td>
+            <td>
+              <button class="btn btn-danger sil">Sil</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Ehlem</td>
+            <td>Gören</td>
+            <td>augue@yahoo.com</td>
+            <td>28</td>
+            <td>
+              <button class="btn btn-warning duzenle">Düzenle</button>
+            </td>
+            <td>
+              <button class="btn btn-danger sil">Sil</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Abdülafuv</td>
+            <td>Serraç</td>
+            <td>eu@mynet.com</td>
+            <td>30</td>
+            <td>
+              <button class="btn btn-warning duzenle">Düzenle</button>
+            </td>
+            <td>
+              <button class="btn btn-danger sil">Sil</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Beyazıt</td>
+            <td>Vaizoğlu</td>
+            <td>ullamcorper@mynet.com</td>
+            <td>20</td>
+            <td>
+              <button class="btn btn-warning duzenle">Düzenle</button>
+            </td>
+            <td>
+              <button class="btn btn-danger sil">Sil</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Işılay</td>
+            <td>Çelikyay</td>
+            <td>scelerisque@mynet.com</td>
+            <td>25</td>
+            <td>
+              <button class="btn btn-warning duzenle">Düzenle</button>
+            </td>
+            <td>
+              <button class="btn btn-danger sil">Sil</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Uygu</td>
+            <td>Karagücük</td>
+            <td>pretium@gmail.com</td>
+            <td>25</td>
+            <td>
+              <button class="btn btn-warning duzenle">Düzenle</button>
+            </td>
+            <td>
+              <button class="btn btn-danger sil">Sil</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Tansoy</td>
+            <td>Özkoyun</td>
+            <td>felis@mynet.com</td>
+            <td>20</td>
+            <td>
+              <button class="btn btn-warning duzenle">Düzenle</button>
+            </td>
+            <td>
+              <button class="btn btn-danger sil">Sil</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Safi</td>
+            <td>Kıran</td>
+            <td>ultricies@gmail.com</td>
+            <td>19</td>
+            <td>
+              <button class="btn btn-warning duzenle">Düzenle</button>
+            </td>
+            <td>
+              <button class="btn btn-danger sil">Sil</button>
+            </td>
+          </tr>
+        </table>
+
+        <!-- sil işlemi modal başla -->
+
+        <div class="modal fade" id="silModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header bg-danger text-danger">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Kayıt Silme Onayı</h4>
+              </div>
+              <div class="modal-body">
+                Kayıt Silinecektir Onaylıyor musunuz?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="btnSil">Sil</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Kapat</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- sil işlemi modal bitiş -->
+        <!--  ekle düzenle işlemi modal başla -->
+
+        <div class="modal fade" id="ekleduzenleModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="modalBaslik">Kayıt Düzenle</h4>
+              </div>
+              <div class="modal-body">
+                <label>Adı</label>
+                <input type="text" id="txtAd" class="form-control">
+                <label>Soyadı</label>
+                <input type="text" id="txtSoyad" class="form-control">
+                <label>E-Posta</label>
+                <input type="text" id="txtMail" class="form-control">
+                <label>Yaş</label>
+                <input type="text" id="txtYas" class="form-control">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="btnKaydet">Kaydet</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Kapat</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ekle düzenle işlemi modal bitiş -->
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery-3.2.1.js"></script>
+  <script src="js/modal.js"></script>
+  <script>
+    $(function () {
+      var id = 0;
+      $(document).on("click", ".sil", function () {
+        id = $(this).closest("tr").index();
+        console.log(id);
+        $("#silModal").modal();
+      });
+
+      $(document).on("click", ".duzenle", function () {
+        id = $(this).closest("tr").index();
+        $("#modalBaslik").html("Kayıt Düzenle");
+        var ad = $("#tbKayitlar tr:eq(" + id + ")").find("td:eq(0)").text();
+        var soyad = $("#tbKayitlar tr:eq(" + id + ")").find("td:eq(1)").text();
+        var mail = $("#tbKayitlar tr:eq(" + id + ")").find("td:eq(2)").text();
+        var yas = $("#tbKayitlar tr:eq(" + id + ")").find("td:eq(3)").text();
+
+
+        $("#txtAd").val(ad);
+        $("#txtSoyad").val(soyad);
+        $("#txtMail").val(mail);
+        $("#txtYas").val(yas);
+
+        $("#ekleduzenleModal").modal();
+      });
+
+      $("#btnSil").click(function () {
+
+        $("#tbKayitlar tr:eq(" + id + ")").remove();
+        $("#silModal").modal("hide");
+      });
+
+      $("#btnKaydet").click(function () {
+
+        var ad = $("#txtAd").val();
+        var soyad = $("#txtSoyad").val();
+        var mail = $("#txtMail").val();
+        var yas = $("#txtYas").val();
+
+        if (id == 0) {
+          $("#tbKayitlar").append('<tr><td>' + ad + '</td><td>' + soyad + '</td><td>' + mail + '</td><td>' + yas + '</td><td><button class="btn btn-warning duzenle">Düzenle</button></td><td><button class="btn btn-danger sil">Sil</button></td></tr>');
+        }
+        else {
+          $("#tbKayitlar tr:eq(" + id + ")").find("td:eq(0)").text(ad);
+          $("#tbKayitlar tr:eq(" + id + ")").find("td:eq(1)").text(soyad);
+          $("#tbKayitlar tr:eq(" + id + ")").find("td:eq(2)").text(mail);
+          $("#tbKayitlar tr:eq(" + id + ")").find("td:eq(3)").text(yas);
+        }
+
+        $("#ekleduzenleModal").modal("hide");
+      });
+
+      $("#btnYeniKayit").click(function () {
+        $("#modalBaslik").html("Yeni Kayıt");
+        $("#txtAd").val("");
+        $("#txtSoyad").val("");
+        $("#txtMail").val("");
+        $("#txtYas").val("");
+        id = 0;
+        $("#ekleduzenleModal").modal();
+      });
+
+    });
+  </script>
+</body>
+
+</html>
